@@ -1,4 +1,4 @@
-package com.example.android.sunshine.app;
+package me.satyabrat.sunshine;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -32,9 +32,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-/**
- * A placeholder fragment containing a simple view.
- */
 public class ForecastFragment extends Fragment {
 
     private ArrayAdapter<String> mForecastAdapter;

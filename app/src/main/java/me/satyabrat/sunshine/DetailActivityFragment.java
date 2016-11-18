@@ -1,4 +1,4 @@
-package com.example.android.sunshine.app;
+package me.satyabrat.sunshine;
 
 import android.content.Intent;
 import android.support.v4.app.Fragment;
@@ -8,9 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-/**
- * A placeholder fragment containing a simple view.
- */
 public class DetailActivityFragment extends Fragment {
 
 

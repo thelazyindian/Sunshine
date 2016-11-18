@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.0"
 
     defaultConfig {
-        applicationId "com.example.android.sunshine.app"
+        applicationId "me.satyabrat.sunshine"
         minSdkVersion 23
         targetSdkVersion 25
         versionCode 1
