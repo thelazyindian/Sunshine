@@ -49,20 +49,20 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void openPreferredLocationInMap(){
-        SharedPreferences sharedPrefs= PreferenceManager.getDefaultSharedPreferences(this);
-        String location=sharedPrefs.getString(getString(R.string.pref_location_key), getString(R.string.pref_location_default));
+    private void openPreferredLocationInMap() {
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        String location = sharedPrefs.getString(getString(R.string.pref_location_key), getString(R.string.pref_location_default));
 
-        Uri geoLocation=Uri.parse("geo:0,0?").buildUpon()
+        Uri geoLocation = Uri.parse("geo:0,0?").buildUpon()
                 .appendQueryParameter("q", location)
                 .build();
 
-        Intent intent=new Intent(Intent.ACTION_VIEW);
+        Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(geoLocation);
 
-        if (intent.resolveActivity(getPackageManager())!=null) {
+        if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
-        }else {
+        } else {
             Log.d(LOG_TAG, "Couldn't Call =" + location + ", no app to view");
         }
     }
