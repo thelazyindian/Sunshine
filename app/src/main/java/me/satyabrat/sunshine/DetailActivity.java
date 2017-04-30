@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import static me.satyabrat.sunshine.DetailActivityFragment.createShareForecastIntent;
+
 public class DetailActivity extends AppCompatActivity {
 
     private static final String LOG_TAG = DetailActivity.class.getSimpleName();
@@ -25,8 +27,7 @@ public class DetailActivity extends AppCompatActivity {
         MenuItem menuItem = menu.findItem(R.id.action_share);
         ShareActionProvider mShareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(menuItem);
         if (mShareActionProvider != null) {
-            mShareActionProvider.setShareIntent(DetailActivityFragment.createShareForecastIntent());
-            ;
+            mShareActionProvider.setShareIntent(createShareForecastIntent());
         } else {
             Log.d(LOG_TAG, "Share Action Provider is null?");
         }
@@ -39,6 +40,9 @@ public class DetailActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             startActivity(new Intent(this, SettingsActivity.class));
             return true;
+        }
+        if (id == R.id.action_share){
+            startActivity(Intent.createChooser(createShareForecastIntent(), "Share via"));
         }
         return super.onOptionsItemSelected(item);
     }
